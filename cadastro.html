@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Cadastre-se na Plataforma ONG e faça parte dessa transformação." />
+  <title>Plataforma ONG | Cadastro</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Cabeçalho (mesmo do index) -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo-area">
+        <a href="index.html" class="logo-link" aria-label="Página inicial">
+          <img src="images/logo-ong.jpg" alt="Logo da Plataforma ONG" class="logo-img">
+        </a>
+        <span class="logo-text">Plataforma ONG</span>
+      </div>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html" class="active">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo -->
+  <main>
+    <section class="hero small-hero">
+      <div class="container hero-text">
+        <h2>Cadastre-se e faça parte</h2>
+        <p>Preencha seus dados para atuar como voluntário ou apoiador.</p>
+      </div>
+    </section>
+
+    <section class="cadastro-form container">
+      <form id="formCadastro" novalidate>
+        <fieldset>
+          <legend>Informações Pessoais</legend>
+
+          <label for="nome">Nome Completo</label>
+          <input id="nome" name="nome" type="text" required>
+
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="cpf">CPF</label>
+          <input id="cpf" name="cpf" type="text" placeholder="000.000.000-00" required>
+
+          <label for="telefone">Telefone</label>
+          <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Endereço</legend>
+
+          <label for="cep">CEP</label>
+          <input id="cep" name="cep" type="text" placeholder="00000-000" required>
+
+          <label for="cidade">Cidade</label>
+          <input id="cidade" name="cidade" type="text" required>
+
+          <label for="estado">Estado (UF)</label>
+          <input id="estado" name="estado" type="text" maxlength="2" required>
+        </fieldset>
+
+        <button type="submit" class="btn">Enviar Cadastro</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Plataforma ONG. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
