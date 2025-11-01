@@ -1,62 +1,379 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Plataforma para ONGs - Conectando solidariedade, voluntariado e impacto social.">
-  <title>Plataforma ONG | Início</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Plataforma ONG — interface moderna, responsiva e acessível." />
+  <title>Plataforma ONG — Início</title>
+
+  <!-- Link para o CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="header">
-  <div class="container header-container">
-    <div class="logo-area">
-      <img src="images/logo-ong.jpg" alt="Logo da Plataforma ONG" class="logo-img">
-      <h1 class="logo-text">Plataforma ONG</h1>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header" role="banner">
+  <div class="container header-grid">
+    <!-- brand -->
+    <div class="brand">
+      <a href="index.html" class="brand-link" aria-label="Página inicial Plataforma ONG">
+        <img src="images/logo-ong.jpg" alt="Logo Plataforma ONG" class="brand-logo">
+      </a>
     </div>
-    <nav class="menu">
-      <ul>
-        <li><a href="index.html" class="active">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
+
+    <!-- desktop nav -->
+    <nav class="nav-desktop" role="navigation" aria-label="Menu principal">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="index.html">Início</a></li>
+
+        <li class="nav-item has-dropdown">
+          <button class="nav-btn dropdown-toggle" aria-expanded="false" aria-haspopup="true">Projetos ▾</button>
+          <ul class="dropdown" role="menu" aria-label="submenu projetos">
+            <li><a role="menuitem" href="projetos.html">Todos os projetos</a></li>
+            <li><a role="menuitem" href="projetos.html#educacao">Educação</a></li>
+            <li><a role="menuitem" href="projetos.html#alimentacao">Alimentação</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+        <li><a class="nav-link" href="#contato">Contato</a></li>
       </ul>
     </nav>
+
+    <!-- mobile hamburger -->
+    <button class="hamburger" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+      <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+    </button>
+  </div>
+
+  <!-- mobile menu (hidden by default) -->
+  <div id="mobile-menu" class="mobile-menu" hidden>
+    <ul class="mobile-list">
+      <li><a href="index.html">Início</a></li>
+      <li>
+        <button class="mobile-dropdown-toggle" aria-expanded="false">Projetos ▾</button>
+        <ul class="mobile-submenu">
+          <li><a href="projetos.html">Todos os projetos</a></li>
+          <li><a href="projetos.html#educacao">Educação</a></li>
+        </ul>
+      </li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
   </div>
 </header>
 
+      <!-- Desktop nav -->
+      <nav class="nav" role="navigation" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Início</a></li>
 
-  <main>
-    <section class="hero">
-      <img src="images/banner-ong.png" alt="Banner de solidariedade" class="hero-banner">
-      <div class="hero-text">
-        <h2>Transforme o mundo com solidariedade</h2>
-        <p>Conheça nossa plataforma e descubra como pequenas ações podem gerar grandes mudanças.</p>
-        <a href="projetos.html" class="btn">Ver Projetos</a>
+          <li class="nav-item dropdown">
+            <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Projetos ▾</button>
+            <ul class="dropdown-menu" role="menu" aria-label="Submenu projetos">
+              <li role="none"><a role="menuitem" href="projetos.html" class="dropdown-item">Todos os projetos</a></li>
+              <li role="none"><a role="menuitem" href="#education" class="dropdown-item">Educação</a></li>
+              <li role="none"><a role="menuitem" href="#health" class="dropdown-item">Saúde</a></li>
+            </ul>
+          </li>
+
+          <li><a href="cadastro.html" class="nav-link">Cadastro</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile: hamburger -->
+      <button class="hamburger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <ul class="mobile-list">
+        <li><a href="index.html">Início</a></li>
+        <li>
+          <button class="mobile-dropdown-toggle" aria-expanded="false">Projetos ▾</button>
+          <ul class="mobile-submenu">
+            <li><a href="projetos.html">Todos os projetos</a></li>
+            <li><a href="#education">Educação</a></li>
+            <li><a href="#health">Saúde</a></li>
+          </ul>
+        </li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== MAIN GRID LAYOUT ===== -->
+  <main id="main" class="site-main container" role="main">
+    <!-- Hero: full width banner implemented with background in CSS but fallback image for accessibility -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <img src="images/banner-ong.png" alt="" aria-hidden="true" class="hero-deco"> <!-- decorative image -->
+        <div class="hero-content">
+          <h1 id="hero-title">Juntos fazemos a diferença</h1>
+          <p>Conectando pessoas, transformando vidas e criando esperança. Participe como voluntário, doador ou parceiro.</p>
+
+          <div class="hero-actions">
+            <a href="projetos.html" class="btn btn-primary">Ver Projetos</a>
+            <button class="btn btn-outline" id="open-modal">Como doar</button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="sobre">
-      <div class="container">
-        <h2>Sobre a Organização</h2>
-        <p>Somos uma plataforma dedicada a fortalecer o trabalho de ONGs por todo o Brasil, promovendo transparência, engajamento e impacto social positivo.</p>
+    <!-- Two-column introduction + highlights using CSS Grid 12-col -->
+    <section class="intro grid" aria-labelledby="intro-title">
+      <h2 id="intro-title" class="section-title">O que fazemos</h2>
+
+      <!-- content spans 8 columns -->
+      <div class="col col-8">
+        <p class="lead">Somos uma plataforma que conecta ONGs, voluntários e doadores com transparência e eficiência. Apoiamos projetos de Educação, Saúde e Sustentabilidade.</p>
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">Educação para Todos <span class="badge">Novo</span></h3>
+              <p>Reforço escolar, oficinas e capacitação de professores.</p>
+              <div class="card-actions">
+                <a class="link" href="#education">Saiba mais</a>
+                <a class="btn btn-small" href="#">Participar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">Saúde Comunitária <span class="tag tag-success">Saúde</span></h3>
+              <p>Clínicas móveis e ações de prevenção em áreas remotas.</p>
+              <div class="card-actions">
+                <a class="link" href="#health">Saiba mais</a>
+                <a class="btn btn-small" href="#">Participar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">Horta Sustentável <span class="tag tag-info">Sustent.</span></h3>
+              <p>Hortas comunitárias com foco em segurança alimentar.</p>
+              <div class="card-actions">
+                <a class="link" href="#sustain">Saiba mais</a>
+                <a class="btn btn-small" href="#">Participar</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- sidebar spans 4 columns -->
+      <aside class="col col-4 sidebar" aria-labelledby="sidebar-title">
+        <h3 id="sidebar-title">Voluntarie-se</h3>
+        <p>Cadastre-se como voluntário e receba oportunidades por e-mail.</p>
+        <form id="vol-form" class="form" novalidate>
+          <label for="v-email">E-mail</label>
+          <input id="v-email" type="email" name="email" placeholder="seu@exemplo.com" required>
+          <button type="submit" class="btn btn-primary btn-block">Quero ajudar</button>
+        </form>
+
+        <div class="alerts" aria-live="polite"></div>
+      </aside>
+    </section>
+
+    <!-- Projects listing (cards grid) -->
+    <section id="projects" class="projects container" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section-title">Projetos em destaque</h2>
+
+      <div class="projects-grid">
+        <!-- Example project card -->
+        <article class="project-card">
+          <div class="project-media" role="img" aria-label="Voluntários em ação"></div>
+          <div class="project-content">
+            <h3>Projeto Aurora</h3>
+            <p>Monitoramento ambiental e educação comunitária.</p>
+            <div class="project-meta">
+              <span class="badge">Em andamento</span>
+              <span class="tag">Ambiente</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn btn-small" href="#">Ver detalhes</a>
+              <a class="link" href="#">Doar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- replicate more cards... -->
+        <article class="project-card">
+          <div class="project-media" role="img" aria-label="Distribuição de alimentos"></div>
+          <div class="project-content">
+            <h3>Mutirão da Esperança</h3>
+            <p>Distribuição de alimentos e atendimento emergencial.</p>
+            <div class="project-meta">
+              <span class="badge badge-warning">Urgente</span>
+              <span class="tag">Socio</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn btn-small" href="#">Ver detalhes</a>
+              <a class="link" href="#">Doar</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="contato">
-      <div class="container">
-        <h2>Entre em Contato</h2>
-        <p>Email: <a href="mailto:contato@plataformaong.org">contato@plataformaong.org</a></p>
-        <p>Telefone: (11) 4002-8922</p>
-      </div>
+    <!-- Contact & transparency -->
+    <section id="contato" class="contact container" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Contato e Transparência</h2>
+      <p>Rua Exemplo, 123 — Centro, Cidade/UF — E-mail: <a href="mailto:contato@plataformaong.org">contato@plataformaong.org</a></p>
+      <a href="#" class="btn btn-outline">Ver relatórios</a>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Plataforma ONG. Todos os direitos reservados.</p>
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p class="footer-copy">© <span id="year"></span> Plataforma ONG — Todos os direitos reservados.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Rodapé">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="#">Privacidade</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- ===== MODAL (Doações) ===== -->
+  <dialog id="donate-modal" class="modal" aria-labelledby="modal-title">
+    <form method="dialog" class="modal-content">
+      <h2 id="modal-title">Como doar</h2>
+      <p>Você pode contribuir via transferência, PIX ou cartão (simulação).</p>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="confirm-donate">Entendi</button>
+        <button class="btn btn-outline" id="close-modal">Fechar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ===== TOAST CONTAINER (feedback) ===== -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+
+  <!-- Main JS (menu, dropdown, mobile, modal, toasts, form) -->
+  <script>
+    // small helpers
+    const q = s => document.querySelector(s);
+    const qa = s => document.querySelectorAll(s);
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hamburger toggle
+    const hamburger = q('.hamburger');
+    const mobileMenu = q('#mobile-menu');
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+      if (mobileMenu.hasAttribute('hidden')) {
+        mobileMenu.removeAttribute('hidden');
+      } else {
+        mobileMenu.setAttribute('hidden', '');
+      }
+    });
+
+    // Mobile dropdown toggle
+    qa('.mobile-dropdown-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const submenu = btn.nextElementSibling;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        if (submenu.style.display === 'block') submenu.style.display = 'none';
+        else submenu.style.display = 'block';
+      });
+    });
+
+    // Desktop dropdown interactions
+    qa('.dropdown-toggle').forEach(toggle => {
+      const parent = toggle.parentElement;
+      const menu = parent.querySelector('.dropdown-menu');
+      toggle.addEventListener('click', (e) => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('open');
+      });
+      // close when click outside
+      document.addEventListener('click', (e) => {
+        if (!parent.contains(e.target)) {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('open');
+        }
+      });
+    });
+
+    // Modal open/close
+    const openModalBtn = q('#open-modal');
+    const closeModalBtn = q('#close-modal');
+    const donateModal = q('#donate-modal');
+
+    openModalBtn && openModalBtn.addEventListener('click', () => {
+      if (typeof donateModal.showModal === 'function') donateModal.showModal();
+      else donateModal.setAttribute('open', '');
+    });
+    closeModalBtn && closeModalBtn.addEventListener('click', () => {
+      if (typeof donateModal.close === 'function') donateModal.close();
+      else donateModal.removeAttribute('open');
+    });
+
+    // Toast helper
+    function showToast(message, type = 'info', time = 3500) {
+      const toast = q('#toast');
+      toast.hidden = false;
+      toast.className = 'toast toast-' + type;
+      toast.textContent = message;
+      setTimeout(() => {
+        toast.hidden = true;
+        toast.className = 'toast';
+      }, time);
+    }
+
+    // Simple volunteer form handling
+    const volForm = q('#vol-form');
+    volForm && volForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = q('#v-email').value.trim();
+      if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+        showToast('Por favor insira um e-mail válido.', 'error', 4000);
+        return;
+      }
+      showToast('Obrigado! Você será notificado sobre oportunidades.', 'success', 4000);
+      volForm.reset();
+    });
+
+    // Form visual validation (example for all forms)
+    qa('form').forEach(form => {
+      form.addEventListener('submit', (e) => {
+        if (!form.checkValidity()) {
+          e.preventDefault();
+          form.classList.add('was-validated');
+          showToast('Preencha os campos obrigatórios corretamente.', 'error', 3000);
+        }
+      });
+    });
+
+    // Accessibility: close modal on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (donateModal && donateModal.hasAttribute('open')) {
+          if (typeof donateModal.close === 'function') donateModal.close();
+          else donateModal.removeAttribute('open');
+        }
+      }
+    });
+  </script>
 </body>
 </html>

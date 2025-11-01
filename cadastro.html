@@ -8,27 +8,54 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Cabeçalho (mesmo do index) -->
-  <header class="header">
-    <div class="container header-container">
-      <div class="logo-area">
-        <a href="index.html" class="logo-link" aria-label="Página inicial">
-          <img src="images/logo-ong.jpg" alt="Logo da Plataforma ONG" class="logo-img">
+
+  <!-- ======= Cabeçalho unificado ======= -->
+  <header class="site-header" role="banner">
+    <div class="container header-grid">
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="Página inicial Plataforma ONG">
+          <img src="images/logo-ong.jpg" alt="Logo Plataforma ONG" class="brand-logo">
         </a>
-        <span class="logo-text">Plataforma ONG</span>
       </div>
 
-      <nav class="menu" aria-label="Menu principal">
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html" class="active">Cadastro</a></li>
+      <nav class="nav-desktop" role="navigation" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item has-dropdown">
+            <button class="nav-btn dropdown-toggle" aria-expanded="false" aria-haspopup="true">Projetos ▾</button>
+            <ul class="dropdown" role="menu" aria-label="submenu projetos">
+              <li><a role="menuitem" href="projetos.html">Todos os projetos</a></li>
+              <li><a role="menuitem" href="projetos.html#educacao">Educação</a></li>
+              <li><a role="menuitem" href="projetos.html#alimentacao">Alimentação</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+          <li><a class="nav-link" href="#contato">Contato</a></li>
         </ul>
       </nav>
+
+      <button class="hamburger" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <ul class="mobile-list">
+        <li><a href="index.html">Início</a></li>
+        <li>
+          <button class="mobile-dropdown-toggle" aria-expanded="false">Projetos ▾</button>
+          <ul class="mobile-submenu">
+            <li><a href="projetos.html">Todos os projetos</a></li>
+            <li><a href="projetos.html#educacao">Educação</a></li>
+          </ul>
+        </li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
     </div>
   </header>
+  <!-- ======= Fim do cabeçalho ======= -->
 
-  <!-- Conteúdo -->
   <main>
     <section class="hero small-hero">
       <div class="container hero-text">
@@ -73,7 +100,6 @@
     </section>
   </main>
 
-  <!-- Rodapé -->
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 Plataforma ONG. Todos os direitos reservados.</p>
